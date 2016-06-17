@@ -1,0 +1,33 @@
+{
+    "name": "th3mouk/free-mobile-sms-cli",
+    "type": "library",
+    "description": "PHP Client using Free Mobile SMS Notification API to send free messages on your mobile phone.",
+    "keywords": ["FreeMobile", "SMS", "Notification", "Mobile", "Phone", "Domotic"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jeremy Marodon",
+            "email": "marodon.jeremy@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^5.6 || ^7.0",
+        "guzzlehttp/guzzle": "^6.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.4",
+        "sllh/php-cs-fixer-styleci-bridge": "^2.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Th3Mouk\\FreeMobileSMSNotif\\": "src/",
+            "Th3Mouk\\FreeMobileSMSNotif\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        }
+    }
+}
