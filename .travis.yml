@@ -18,6 +18,9 @@ matrix:
   allow_failures:
     - php: 7.1
 
+script:
+  make test
+
 before_script:
   - mkdir -p ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d && echo "memory_limit=-1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
   - composer selfupdate
