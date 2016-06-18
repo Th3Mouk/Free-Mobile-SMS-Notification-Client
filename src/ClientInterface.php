@@ -20,5 +20,5 @@ interface ClientInterface
      *
      * @return ResponseInterface
      */
-    public function sendMessage($message);
+    public function send($message);
 }

@@ -34,7 +34,7 @@ $login = 'test';
 $pass = 'test';
 
 $freeMobileClient = new Client($login, $pass);
-$response = $freeMobileClient->sendMessage('Test Message');
+$response = $freeMobileClient->send('Test Message');
 ```
 
 ### Response Codes

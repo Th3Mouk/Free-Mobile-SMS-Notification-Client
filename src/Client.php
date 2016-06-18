@@ -31,7 +31,7 @@ final class Client implements ClientInterface
      *
      * @var string
      */
-    private $pass;
+    private $key;
 
     /**
      * HTTP Client to communicate throught the web.
@@ -44,25 +44,27 @@ final class Client implements ClientInterface
      * Client constructor.
      *
      * @param string $login
-     * @param string $pass
+     * @param string $key
      */
-    public function __construct($login, $pass)
+    public function __construct($login, $key)
     {
         $this->login = $login;
-        $this->pass = $pass;
+        $this->key = $key;
         $this->httpClient = new GuzzleClient();
     }
 
     /**
      * {@inheritdoc}
      */
-    public function sendMessage($message)
+    public function send($message)
     {
         try {
             return $this->httpClient->post(self::API_URL, [
-                'login' => $this->login,
-                'pass' => $this->pass,
-                'msg' => (string) $message,
+                'query' => [
+                    'user' => $this->login,
+                    'pass' => $this->key,
+                    'msg' => (string) $message,
+                ],
             ]);
         } catch (RequestException $exception) {
             return $exception->getResponse();
@@ -80,9 +82,9 @@ final class Client implements ClientInterface
     /**
      * @return string
      */
-    public function getPass()
+    public function getkey()
     {
-        return $this->pass;
+        return $this->key;
     }
 
     /**

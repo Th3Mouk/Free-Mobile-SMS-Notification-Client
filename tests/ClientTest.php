@@ -35,19 +35,19 @@ class ClientTest extends TestCase
         $freeMobileClient = $this->createTestClient();
         $freeMobileClient->setHttpClient($client);
 
-        $response = $freeMobileClient->sendMessage('Test Message');
+        $response = $freeMobileClient->send('Test Message');
         $this->assertTrue(200 === $response->getStatusCode());
 
-        $response = $freeMobileClient->sendMessage('Test Message');
+        $response = $freeMobileClient->send('Test Message');
         $this->assertTrue(400 === $response->getStatusCode());
 
-        $response = $freeMobileClient->sendMessage('Test Message');
+        $response = $freeMobileClient->send('Test Message');
         $this->assertTrue(402 === $response->getStatusCode());
 
-        $response = $freeMobileClient->sendMessage('Test Message');
+        $response = $freeMobileClient->send('Test Message');
         $this->assertTrue(403 === $response->getStatusCode());
 
-        $response = $freeMobileClient->sendMessage('Test Message');
+        $response = $freeMobileClient->send('Test Message');
         $this->assertTrue(500 === $response->getStatusCode());
     }
 
@@ -58,22 +58,22 @@ class ClientTest extends TestCase
     {
         $freeMobileClient = $this->createTestClient();
 
-        $freeMobileClient->sendMessage(new BazingaEntity());
+        $freeMobileClient->send(new BazingaEntity());
     }
 
     public function testClientAttributes()
     {
         $freeMobileClient = $this->createTestClient();
         $this->assertEquals('test', $freeMobileClient->getLogin());
-        $this->assertEquals('test', $freeMobileClient->getPass());
+        $this->assertEquals('test', $freeMobileClient->getkey());
         $this->assertInstanceOf('GuzzleHttp\Client', $freeMobileClient->getHttpClient());
     }
 
     public function createTestClient()
     {
         $login = 'test';
-        $pass = 'test';
+        $key = 'test';
 
-        return new Client($login, $pass);
+        return new Client($login, $key);
     }
 }
