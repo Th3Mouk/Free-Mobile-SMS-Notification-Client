@@ -52,4 +52,4 @@ $code = $response->getStatusCode();
 
 ## Please
 
-Feel free to improve this bundle.
+Feel free to improve this library.
