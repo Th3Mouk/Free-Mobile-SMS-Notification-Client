@@ -13,7 +13,7 @@ This library provides a client to send SMS notifications on your mobile phone, t
 
 ### Composer
 
-`composer require th3mouk/free-mobile-sms-cli ^1.0@dev`
+`composer require th3mouk/free-mobile-sms-cli ^1.0`
 
 ### Free Mobile
 
