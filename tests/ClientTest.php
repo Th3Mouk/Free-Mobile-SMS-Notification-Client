@@ -61,6 +61,14 @@ class ClientTest extends TestCase
         $freeMobileClient->sendMessage(new BazingaEntity());
     }
 
+    public function testClientAttributes()
+    {
+        $freeMobileClient = $this->createTestClient();
+        $this->assertEquals('test', $freeMobileClient->getLogin());
+        $this->assertEquals('test', $freeMobileClient->getPass());
+        $this->assertInstanceOf('GuzzleHttp\Client', $freeMobileClient->getHttpClient());
+    }
+
     public function createTestClient()
     {
         $login = 'test';
