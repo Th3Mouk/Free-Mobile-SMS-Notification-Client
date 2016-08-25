@@ -64,8 +64,8 @@ class ClientTest extends TestCase
     public function testClientAttributes()
     {
         $freeMobileClient = $this->createTestClient();
-        $this->assertEquals('test', $freeMobileClient->getLogin());
-        $this->assertEquals('test', $freeMobileClient->getkey());
+        $this->assertSame('test', $freeMobileClient->getLogin());
+        $this->assertSame('test', $freeMobileClient->getkey());
         $this->assertInstanceOf('GuzzleHttp\Client', $freeMobileClient->getHttpClient());
     }
 
