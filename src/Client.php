@@ -37,7 +37,7 @@ final class Client implements ClientInterface
     /**
      * HTTP Client to communicate throught the web.
      *
-     * @var GuzzleClient
+     * @var GuzzleClientInterface
      */
     private $httpClient;
 
@@ -89,7 +89,7 @@ final class Client implements ClientInterface
     }
 
     /**
-     * @return GuzzleClient
+     * @return GuzzleClientInterface
      */
     public function getHttpClient()
     {
