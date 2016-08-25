@@ -10,6 +10,7 @@
 namespace Th3Mouk\FreeMobileSMSNotif;
 
 use GuzzleHttp\Client as GuzzleClient;
+use GuzzleHttp\ClientInterface as GuzzleClientInterface;
 use GuzzleHttp\Exception\RequestException;
 
 final class Client implements ClientInterface
@@ -96,9 +97,9 @@ final class Client implements ClientInterface
     }
 
     /**
-     * @param GuzzleClient $httpClient
+     * @param GuzzleClientInterface $httpClient
      */
-    public function setHttpClient(GuzzleClient $httpClient)
+    public function setHttpClient(GuzzleClientInterface $httpClient)
     {
         $this->httpClient = $httpClient;
     }
