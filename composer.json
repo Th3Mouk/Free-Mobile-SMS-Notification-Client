@@ -12,11 +12,11 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "php": "^5.5 || ^7.0",
+        "php": "^5.6 || ^7.0",
         "guzzlehttp/guzzle": "^6.2"
     },
     "require-dev": {
-        "phpunit/phpunit": "@stable",
+        "phpunit/phpunit": "^5.4.3",
         "sllh/php-cs-fixer-styleci-bridge": "^2.1"
     },
     "autoload": {
